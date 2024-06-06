@@ -11,6 +11,10 @@
 		265D49B52C063D5600690E9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49B42C063D5600690E9D /* ContentView.swift */; };
 		265D49B72C063D5700690E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265D49B62C063D5700690E9D /* Assets.xcassets */; };
 		265D49BA2C063D5700690E9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265D49B92C063D5700690E9D /* Preview Assets.xcassets */; };
+		265D49CC2C0784EE00690E9D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 265D49CB2C0784EE00690E9D /* Alamofire */; };
+		265D49CF2C0A2EFA00690E9D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49CE2C0A2EFA00690E9D /* LoginService.swift */; };
+		265D49D42C0CD05500690E9D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49D32C0CD05500690E9D /* LoginModel.swift */; };
+		265D49D72C11409900690E9D /* QrcodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49D62C11409900690E9D /* QrcodeUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		265D49B62C063D5700690E9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		265D49B92C063D5700690E9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		265D49BB2C063D5700690E9D /* MacBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacBox.entitlements; sourceTree = "<group>"; };
+		265D49C12C07729B00690E9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		265D49CE2C0A2EFA00690E9D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		265D49D32C0CD05500690E9D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		265D49D62C11409900690E9D /* QrcodeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265D49CC2C0784EE00690E9D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,10 @@
 		265D49B12C063D5600690E9D /* MacBox */ = {
 			isa = PBXGroup;
 			children = (
+				265D49D52C11408600690E9D /* Utils */,
+				265D49D22C0CD03600690E9D /* Models */,
+				265D49CD2C0A2EE100690E9D /* Services */,
+				265D49C12C07729B00690E9D /* Info.plist */,
 				265D49B22C063D5600690E9D /* MacBoxApp.swift */,
 				265D49B42C063D5600690E9D /* ContentView.swift */,
 				265D49B62C063D5700690E9D /* Assets.xcassets */,
@@ -67,6 +80,30 @@
 				265D49B92C063D5700690E9D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		265D49CD2C0A2EE100690E9D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				265D49CE2C0A2EFA00690E9D /* LoginService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		265D49D22C0CD03600690E9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				265D49D32C0CD05500690E9D /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		265D49D52C11408600690E9D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				265D49D62C11409900690E9D /* QrcodeUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +122,9 @@
 			dependencies = (
 			);
 			name = MacBox;
+			packageProductDependencies = (
+				265D49CB2C0784EE00690E9D /* Alamofire */,
+			);
 			productName = MacBox;
 			productReference = 265D49AF2C063D5600690E9D /* MacBox.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +153,9 @@
 				Base,
 			);
 			mainGroup = 265D49A62C063D5600690E9D;
+			packageReferences = (
+				265D49CA2C0784ED00690E9D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 265D49B02C063D5600690E9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
+				265D49D42C0CD05500690E9D /* LoginModel.swift in Sources */,
+				265D49CF2C0A2EFA00690E9D /* LoginService.swift in Sources */,
+				265D49D72C11409900690E9D /* QrcodeUtil.swift in Sources */,
 				265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +323,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MacBox/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacBox/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +349,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MacBox/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacBox/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		265D49CA2C0784ED00690E9D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		265D49CB2C0784EE00690E9D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 265D49CA2C0784ED00690E9D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 265D49A72C063D5600690E9D /* Project object */;
 }
