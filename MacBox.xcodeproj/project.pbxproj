@@ -15,6 +15,8 @@
 		265D49CF2C0A2EFA00690E9D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49CE2C0A2EFA00690E9D /* LoginService.swift */; };
 		265D49D42C0CD05500690E9D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49D32C0CD05500690E9D /* LoginModel.swift */; };
 		265D49D72C11409900690E9D /* QrcodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49D62C11409900690E9D /* QrcodeUtil.swift */; };
+		265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49D92C14AF8700690E9D /* ToolsView.swift */; };
+		265D49DC2C14B94500690E9D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49DB2C14B94500690E9D /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		265D49CE2C0A2EFA00690E9D /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		265D49D32C0CD05500690E9D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		265D49D62C11409900690E9D /* QrcodeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeUtil.swift; sourceTree = "<group>"; };
+		265D49D92C14AF8700690E9D /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		265D49DB2C14B94500690E9D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		265D49B12C063D5600690E9D /* MacBox */ = {
 			isa = PBXGroup;
 			children = (
+				265D49D82C14AEF400690E9D /* Views */,
 				265D49D52C11408600690E9D /* Utils */,
 				265D49D22C0CD03600690E9D /* Models */,
 				265D49CD2C0A2EE100690E9D /* Services */,
@@ -104,6 +109,15 @@
 				265D49D62C11409900690E9D /* QrcodeUtil.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		265D49D82C14AEF400690E9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				265D49D92C14AF8700690E9D /* ToolsView.swift */,
+				265D49DB2C14B94500690E9D /* MainView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */,
+				265D49DC2C14B94500690E9D /* MainView.swift in Sources */,
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
 				265D49D42C0CD05500690E9D /* LoginModel.swift in Sources */,
 				265D49CF2C0A2EFA00690E9D /* LoginService.swift in Sources */,
