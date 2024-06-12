@@ -23,7 +23,7 @@ struct ContentView: View {
                 ToolsView(showPageId: $showPageId)
 
             case "reminder":
-                ReminderView(showPageId: $showPageId)
+                ReminderView(showPageId: $showPageId).modelContainer(for: ReminderItemModel.self)
 
             default:
 

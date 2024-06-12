@@ -23,7 +23,7 @@ struct ReminderView: View {
             .navigationTitle("ReminderList")
             .toolbar {
                 // 增加数据
-                 Button("Add", systemImage: "plus", action: addItem)
+                Button("Add", systemImage: "plus", action: addItem)
 
                 // 修改排序方式
                 Menu("Sort", systemImage: "arrow.up.arrow.down") {
@@ -38,13 +38,12 @@ struct ReminderView: View {
                 }
             }
     }}
-    
-     func addItem() {
-         let reminderItem = ReminderItemModel(title: "test",desc: "", timestamp: 0)
-          modelContext.insert(reminderItem)
-          path = [reminderItem]
 
-      }
+    func addItem() {
+        let reminderItem = ReminderItemModel(title: "test", desc: "", timestamp: DateUtil().getTimestamp())
+        modelContext.insert(reminderItem)
+        path = [reminderItem]
+    }
 }
 
 // MARK: - TodoListView
@@ -108,5 +107,5 @@ struct EditView: View {
  #Preview {
      ReminderView(showPageId: "reminder")
  }
- 
-*/
+
+ */
