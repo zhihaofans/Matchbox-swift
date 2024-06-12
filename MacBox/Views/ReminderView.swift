@@ -96,7 +96,10 @@ struct EditView: View {
     var body: some View {
         Form {
             // 3. 修改
-            TextField("请输入标题", text: $reminderItem.title)
+
+            Text("请输入标题!").font(.largeTitle)
+            TextField("标题:", text: $reminderItem.title)
+            Text("创建时间:"+DateUtil().timestampToTimeStr(timestampInt: reminderItem.timestamp)).font(.largeTitle)
         }
         .padding()
         .navigationTitle("编辑")
