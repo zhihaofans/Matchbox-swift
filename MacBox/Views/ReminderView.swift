@@ -13,7 +13,7 @@ struct ReminderView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var path = [ReminderItemModel]()
     // 默认排序方式
-    @State private var sortOrder = SortDescriptor(\ReminderItemModel.title)
+    @State private var sortOrder = SortDescriptor(\ReminderItemModel.timestamp, order: .reverse)
 
     var body: some View { NavigationStack(path: $path) {
         TodoListView(sort: sortOrder)
@@ -23,15 +23,18 @@ struct ReminderView: View {
             .navigationTitle("ReminderList")
             .toolbar {
                 // 增加数据
+                Button("Home", systemImage: "house", action: {
+                    showPageId = "main"
+                })
                 Button("Add", systemImage: "plus", action: addItem)
 
                 // 修改排序方式
                 Menu("Sort", systemImage: "arrow.up.arrow.down") {
                     Picker("Sort", selection: $sortOrder) {
-                        Text("Title")
+                        Text("标题")
                             .tag(SortDescriptor(\ReminderItemModel.title, order: .reverse))
 
-                        Text("Date")
+                        Text("日期")
                             .tag(SortDescriptor(\ReminderItemModel.timestamp, order: .reverse))
                     }
                     .pickerStyle(.inline)
@@ -69,7 +72,7 @@ struct TodoListView: View {
 
                             Spacer()
 
-                            Text(String(reminderItem.timestamp))
+                            Text(DateUtil().timestampToTimeStr(timestampInt: reminderItem.timestamp))
                         }
                     }
                 }
@@ -99,7 +102,10 @@ struct EditView: View {
 
             Text("请输入标题!").font(.largeTitle)
             TextField("标题:", text: $reminderItem.title)
-            Text("创建时间:"+DateUtil().timestampToTimeStr(timestampInt: reminderItem.timestamp)).font(.largeTitle)
+            Text("创建时间:" + DateUtil().timestampToTimeStr(timestampInt: reminderItem.timestamp)).font(.largeTitle)
+            Button(action: {}) {
+                Text("").font(.title)
+            }
         }
         .padding()
         .navigationTitle("编辑")
