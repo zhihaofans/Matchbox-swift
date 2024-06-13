@@ -6,14 +6,21 @@
 //
 
 import Foundation
-import SwiftUI
-import CoreImage.CIFilterBuiltins
-class EncodeUtil{
-  func UrlEncode(oldString:String)-> String{
-    if oldString.isEmpty(){
-      return ""
-    }else{
-      return oldString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+
+class EncodeUtil {
+    func UrlEncode(oldString: String) -> String {
+        if oldString.isEmpty {
+            return ""
+        } else {
+            return oldString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? oldString
+        }
     }
-  }
+
+    func UrlDecode(oldString: String) -> String {
+        if let decodedString = oldString.removingPercentEncoding {
+            return decodedString
+        } else {
+            return oldString
+        }
+    }
 }

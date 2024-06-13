@@ -21,6 +21,7 @@
 		265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49DF2C160D7100690E9D /* ReminderDataModel.swift */; };
 		265D49E42C18985A00690E9D /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49E32C18985A00690E9D /* ReminderService.swift */; };
 		26FD04032C19F9510076245C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD04022C19F9510076245C /* DateUtil.swift */; };
+		26FD04052C1B31640076245C /* EncodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD04042C1B31640076245C /* EncodeUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		265D49DF2C160D7100690E9D /* ReminderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDataModel.swift; sourceTree = "<group>"; };
 		265D49E32C18985A00690E9D /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
 		26FD04022C19F9510076245C /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		26FD04042C1B31640076245C /* EncodeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodeUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		265D49D52C11408600690E9D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				26FD04042C1B31640076245C /* EncodeUtil.swift */,
 				265D49D62C11409900690E9D /* QrcodeUtil.swift */,
 				26FD04022C19F9510076245C /* DateUtil.swift */,
 			);
@@ -211,6 +214,7 @@
 				265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */,
 				26FD04032C19F9510076245C /* DateUtil.swift in Sources */,
 				265D49E42C18985A00690E9D /* ReminderService.swift in Sources */,
+				26FD04052C1B31640076245C /* EncodeUtil.swift in Sources */,
 				265D49DC2C14B94500690E9D /* MainView.swift in Sources */,
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
 				265D49D42C0CD05500690E9D /* LoginModel.swift in Sources */,
