@@ -22,6 +22,9 @@
 		265D49E42C18985A00690E9D /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49E32C18985A00690E9D /* ReminderService.swift */; };
 		26FD04032C19F9510076245C /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD04022C19F9510076245C /* DateUtil.swift */; };
 		26FD04052C1B31640076245C /* EncodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD04042C1B31640076245C /* EncodeUtil.swift */; };
+		26FD04082C1B3A6C0076245C /* StringEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD04072C1B3A6C0076245C /* StringEx.swift */; };
+		26FD040A2C1B3B860076245C /* IntEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD04092C1B3B860076245C /* IntEx.swift */; };
+		26FD040C2C1B3C770076245C /* BoolEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FD040B2C1B3C770076245C /* BoolEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		265D49E32C18985A00690E9D /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
 		26FD04022C19F9510076245C /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
 		26FD04042C1B31640076245C /* EncodeUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodeUtil.swift; sourceTree = "<group>"; };
+		26FD04072C1B3A6C0076245C /* StringEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEx.swift; sourceTree = "<group>"; };
+		26FD04092C1B3B860076245C /* IntEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntEx.swift; sourceTree = "<group>"; };
+		26FD040B2C1B3C770076245C /* BoolEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 		265D49B12C063D5600690E9D /* MacBox */ = {
 			isa = PBXGroup;
 			children = (
+				26FD04062C1B3A5F0076245C /* SwiftEx */,
 				265D49D82C14AEF400690E9D /* Views */,
 				265D49D52C11408600690E9D /* Utils */,
 				265D49D22C0CD03600690E9D /* Models */,
@@ -133,6 +140,16 @@
 				265D49DD2C160B4C00690E9D /* ReminderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		26FD04062C1B3A5F0076245C /* SwiftEx */ = {
+			isa = PBXGroup;
+			children = (
+				26FD04072C1B3A6C0076245C /* StringEx.swift */,
+				26FD04092C1B3B860076245C /* IntEx.swift */,
+				26FD040B2C1B3C770076245C /* BoolEx.swift */,
+			);
+			path = SwiftEx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */,
+				26FD040C2C1B3C770076245C /* BoolEx.swift in Sources */,
 				26FD04032C19F9510076245C /* DateUtil.swift in Sources */,
 				265D49E42C18985A00690E9D /* ReminderService.swift in Sources */,
 				26FD04052C1B31640076245C /* EncodeUtil.swift in Sources */,
@@ -219,9 +237,11 @@
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
 				265D49D42C0CD05500690E9D /* LoginModel.swift in Sources */,
 				265D49CF2C0A2EFA00690E9D /* LoginService.swift in Sources */,
+				26FD040A2C1B3B860076245C /* IntEx.swift in Sources */,
 				265D49D72C11409900690E9D /* QrcodeUtil.swift in Sources */,
 				265D49DE2C160B4C00690E9D /* ReminderView.swift in Sources */,
 				265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */,
+				26FD04082C1B3A6C0076245C /* StringEx.swift in Sources */,
 				265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
