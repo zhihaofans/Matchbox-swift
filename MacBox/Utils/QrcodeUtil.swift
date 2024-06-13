@@ -11,7 +11,7 @@ import CoreImage.CIFilterBuiltins
 class QrcodeUtil{
     private let context = CIContext()
     private let filter = CIFilter.qrCodeGenerator()
-    private func generateQRCode(from string: String) -> NSImage? {
+    func generateQRCode(from string: String) -> NSImage? {
         filter.message = Data(string.utf8)
         if let outputImage = filter.outputImage {
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
