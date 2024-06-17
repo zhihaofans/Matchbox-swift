@@ -11,4 +11,7 @@ extension String {
     var isNotEmpty: Bool {
         return !self.isEmpty
     }
+    var isInt: Bool {
+      return Int(self) != nil
+    }
 }
