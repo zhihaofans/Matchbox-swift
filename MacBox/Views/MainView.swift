@@ -22,5 +22,10 @@ struct MainView: View {
         }) {
             Text("提醒事项").font(.title)
         }
+        Button(action: {
+            showPageId = "livephotoeditor"
+        }) {
+            Text("编辑实况图片").font(.title)
+        }
     }
 }

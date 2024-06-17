@@ -25,6 +25,9 @@ struct ContentView: View {
             case "reminder":
                 ReminderView(showPageId: $showPageId).modelContainer(for: ReminderItemModel.self)
 
+            // case "livephotoeditor":
+                // print("livephotoeditor")
+
             default:
 
                 Text("错误导航")
