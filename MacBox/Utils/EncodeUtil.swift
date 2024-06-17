@@ -13,6 +13,6 @@ class EncodeUtil {
     }
 
     func UrlDecode(oldString: String) -> String {
-        return oldString.removingPercentEncoding() ?? oldString
+        return oldString.removingPercentEncoding ?? oldString
     }
 }
