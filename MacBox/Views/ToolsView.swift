@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import SwiftUtils
 
 struct ToolsView: View {
     @Binding var showPageId: String
     @State var newPageId = ""
     @State private var showingAlert = false
+    @State private var showingjsDelivrAlert = false
+    @State private var githubUrl = "https://github.com/zhihaofans/macbox-swift/blob/main/MacBox/Views/ToolsView.swift"
+    @State private var textStr = "Hello, Tools!"
     var body: some View {
-        Text("Hello, Tools!")
+        Text(textStr)
         Button(action: {
             showPageId = "main"
         }) {
@@ -34,6 +38,27 @@ struct ToolsView: View {
             })
         } message: {
             Text("MacBox会很智能的跳转，除非你乱输入id")
+        }
+        Button(action: {
+            showingjsDelivrAlert = true
+        }) {
+            Text("Github转jsDelivr").font(.title)
+        }
+        .alert("输入Github链接", isPresented: $showingjsDelivrAlert) {
+            TextField("Github:", text: $githubUrl)
+            Button("OK", action: {
+                print(githubUrl)
+                if githubUrl.isNotEmpty {
+                    debugPrint(showPageId)
+                    var result = jsDelivrSerivce().generateFromGithub(githubUrl: githubUrl)
+                    debugPrint(result as Any)
+                    if result != nil {
+                        textStr = result ?? "错误"
+                    }
+                }
+            })
+        } message: {
+            Text("可能不支持你输入的格式")
         }
     }
 }

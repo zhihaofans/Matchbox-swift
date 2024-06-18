@@ -25,7 +25,12 @@ struct MainView: View {
         Button(action: {
             showPageId = "livephotoeditor"
         }) {
-            Text("编辑实况图片").font(.title)
+            Text("实况图片").font(.title)
+        }
+        Button(action: {
+            showPageId = "downloader"
+        }) {
+            Text("下载器").font(.title)
         }
     }
 }
