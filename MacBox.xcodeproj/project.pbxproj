@@ -18,6 +18,7 @@
 		265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49DF2C160D7100690E9D /* ReminderDataModel.swift */; };
 		265D49E42C18985A00690E9D /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49E32C18985A00690E9D /* ReminderService.swift */; };
 		26CC20432C21D2C000E0A299 /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20422C21D2C000E0A299 /* SwiftUtils */; };
+		26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20442C21E60100E0A299 /* jsDelivrService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		265D49DD2C160B4C00690E9D /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		265D49DF2C160D7100690E9D /* ReminderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDataModel.swift; sourceTree = "<group>"; };
 		265D49E32C18985A00690E9D /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
+		26CC20442C21E60100E0A299 /* jsDelivrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsDelivrService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				265D49E32C18985A00690E9D /* ReminderService.swift */,
+				26CC20442C21E60100E0A299 /* jsDelivrService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				265D49E42C18985A00690E9D /* ReminderService.swift in Sources */,
 				265D49DC2C14B94500690E9D /* MainView.swift in Sources */,
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
+				26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */,
 				265D49DE2C160B4C00690E9D /* ReminderView.swift in Sources */,
 				265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */,
 				265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */,
@@ -334,6 +338,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MacBox/Preview Content\"";
+				DEVELOPMENT_TEAM = 7PDM8RVDK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MacBox/Info.plist;
@@ -360,6 +365,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MacBox/Preview Content\"";
+				DEVELOPMENT_TEAM = 7PDM8RVDK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MacBox/Info.plist;
@@ -412,8 +418,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zhihaofans/SwiftUtils";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
