@@ -32,5 +32,10 @@ struct MainView: View {
         }) {
             Text("下载器").font(.title)
         }
+        Button(action: {
+            showPageId = "encode"
+        }) {
+            Text("编码加密").font(.title)
+        }
     }
 }
