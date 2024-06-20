@@ -19,6 +19,7 @@
 		265D49E42C18985A00690E9D /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49E32C18985A00690E9D /* ReminderService.swift */; };
 		26CC20432C21D2C000E0A299 /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20422C21D2C000E0A299 /* SwiftUtils */; };
 		26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20442C21E60100E0A299 /* jsDelivrService.swift */; };
+		26CC20472C226B0000E0A299 /* EncodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20462C226B0000E0A299 /* EncodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		265D49DF2C160D7100690E9D /* ReminderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDataModel.swift; sourceTree = "<group>"; };
 		265D49E32C18985A00690E9D /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
 		26CC20442C21E60100E0A299 /* jsDelivrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsDelivrService.swift; sourceTree = "<group>"; };
+		26CC20462C226B0000E0A299 /* EncodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				265D49D92C14AF8700690E9D /* ToolsView.swift */,
 				265D49DB2C14B94500690E9D /* MainView.swift */,
 				265D49DD2C160B4C00690E9D /* ReminderView.swift */,
+				26CC20462C226B0000E0A299 /* EncodeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				265D49DE2C160B4C00690E9D /* ReminderView.swift in Sources */,
 				265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */,
 				265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */,
+				26CC20472C226B0000E0A299 /* EncodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,8 +422,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zhihaofans/SwiftUtils";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
+				kind = exactVersion;
+				version = "0.0.2-fix";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
