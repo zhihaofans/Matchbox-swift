@@ -23,6 +23,7 @@ struct EncodeView: View {
             Text("Url解码").tag("urldecode")
             Text("Base64编码").tag("base64encode")
             Text("Base64解码").tag("base64decode")
+            Text("Github转jsDelivr").tag("github2jsdelivr")
         }
         TextField("请输入:", text: $encodeStr)
         TextField("结果:", text: $encodeResult)
@@ -35,7 +36,7 @@ struct EncodeView: View {
 
     private func auto() {
         if encodeStr.isNotEmpty {
-            switch encodeMode {
+            switch encodeMode.lowercased() {
             case "urlencode":
                 encodeResult = EncodeUtil().urlEncode(oldString: encodeStr)
             case "urldecode":
@@ -44,9 +45,13 @@ struct EncodeView: View {
                 encodeResult = EncodeUtil().base64Encode(oldString: encodeStr)
             case "base64decode":
                 encodeResult = EncodeUtil().base64Decode(oldString: encodeStr)
+            case "github2jsdelivr":
+                encodeResult = jsDelivrSerivce().generateFromGithub(githubUrl: encodeStr)
             default:
                 encodeResult = "error."
             }
+        } else {
+            encodeResult = "isEmpty."
         }
     }
 }

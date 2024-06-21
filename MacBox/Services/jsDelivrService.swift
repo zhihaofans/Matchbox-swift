@@ -8,7 +8,7 @@
 import Foundation
 
 class jsDelivrSerivce {
-    func generateFromGithub(githubUrl: String) -> String? {
+    func generateFromGithub(githubUrl: String) -> String {
         if githubUrl.isNotEmpty {
             let inputUrls = githubUrl.trimmingCharacters(in: .whitespacesAndNewlines).split(separator: " ").map { String($0) }
             var cdnLinks: [String] = []
@@ -30,20 +30,20 @@ class jsDelivrSerivce {
                         cdnLink = "https://cdn.jsdelivr.net/gh/\(userRepo)/\(filename)"
                     } else {
                         print("Invalid URL")
-                        return nil
+                        return "Invalid URL"
                     }
                 } else {
                     print("Invalid URL")
-                    return nil
+                    return "Invalid URL"
                 }
 
                 cdnLinks.append(cdnLink)
             }
-            return cdnLinks.first
-            //return cdnLinks.joined(separator: " ")
+            // return cdnLinks.first
+            return cdnLinks.joined(separator: " ")
         } else {
             print("githubUrl.isEmpty")
-            return nil
+            return "Empty URL"
         }
     }
 }

@@ -15,7 +15,7 @@ struct MainView: View {
         Button(action: {
             showPageId = "tool"
         }) {
-            Text("打开工具").font(.title)
+            Text("工具箱").font(.title)
         }
         Button(action: {
             showPageId = "reminder"

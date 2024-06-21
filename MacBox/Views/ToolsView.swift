@@ -18,11 +18,6 @@ struct ToolsView: View {
     var body: some View {
         Text(textStr)
         Button(action: {
-            showPageId = "main"
-        }) {
-            Text("返回主页").font(.title)
-        }
-        Button(action: {
             showingAlert = true
         }) {
             Text("跳转页面").font(.title)
@@ -38,27 +33,6 @@ struct ToolsView: View {
             })
         } message: {
             Text("MacBox会很智能的跳转，除非你乱输入id")
-        }
-        Button(action: {
-            showingjsDelivrAlert = true
-        }) {
-            Text("Github转jsDelivr").font(.title)
-        }
-        .alert("输入Github链接", isPresented: $showingjsDelivrAlert) {
-            TextField("Github:", text: $githubUrl)
-            Button("OK", action: {
-                print(githubUrl)
-                if githubUrl.isNotEmpty {
-                    debugPrint(showPageId)
-                    var result = jsDelivrSerivce().generateFromGithub(githubUrl: githubUrl)
-                    debugPrint(result as Any)
-                    if result != nil {
-                        textStr = result ?? "错误"
-                    }
-                }
-            })
-        } message: {
-            Text("可能不支持你输入的格式")
         }
     }
 }
