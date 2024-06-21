@@ -42,6 +42,11 @@ struct ContentView: View {
                     Text("返回主页").font(.title)
                 }
             }
+        }.toolbar {
+            // 增加数据
+            Button("Home", systemImage: "house", action: {
+                showPageId = "main"
+            })
         }
         .onChange(of: showPageId) {
             // 当 a 改变时，更新 b

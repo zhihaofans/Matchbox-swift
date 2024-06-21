@@ -24,9 +24,9 @@ struct ReminderView: View {
             .navigationTitle("ReminderList")
             .toolbar {
                 // 增加数据
-                Button("Home", systemImage: "house", action: {
-                    showPageId = "main"
-                })
+                /* Button("Home", systemImage: "house", action: {
+                     showPageId = "main"
+                 }) */
                 Button("Add", systemImage: "plus", action: addItem)
 
                 // 修改排序方式
