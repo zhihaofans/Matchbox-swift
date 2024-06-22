@@ -423,7 +423,7 @@
 			repositoryURL = "https://github.com/zhihaofans/SwiftUtils";
 			requirement = {
 				kind = exactVersion;
-				version = "0.0.2-fix";
+				version = "0.0.4-fix";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
