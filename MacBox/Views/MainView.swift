@@ -23,6 +23,11 @@ struct MainView: View {
             Text("提醒事项").font(.title)
         }
         Button(action: {
+            showPageId = "encode"
+        }) {
+            Text("编码加密").font(.title)
+        }
+        Button(action: {
             showPageId = "livephotoeditor"
         }) {
             Text("实况图片").font(.title)
@@ -31,11 +36,6 @@ struct MainView: View {
             showPageId = "downloader"
         }) {
             Text("下载器").font(.title)
-        }
-        Button(action: {
-            showPageId = "encode"
-        }) {
-            Text("编码加密").font(.title)
         }
     }
 }

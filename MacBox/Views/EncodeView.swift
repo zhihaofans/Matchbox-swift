@@ -23,6 +23,9 @@ struct EncodeView: View {
             Text("Url解码").tag("urldecode")
             Text("Base64编码").tag("base64encode")
             Text("Base64解码").tag("base64decode")
+            Text("Sha256加密").tag("sha256")
+            Text("Sha384加密").tag("sha384")
+            Text("Sha512加密").tag("sha512")
             Text("Github转jsDelivr").tag("github2jsdelivr")
         }
         TextField("请输入:", text: $encodeStr)
@@ -47,6 +50,12 @@ struct EncodeView: View {
                 encodeResult = EncodeUtil().base64Decode(oldString: encodeStr)
             case "github2jsdelivr":
                 encodeResult = jsDelivrSerivce().generateFromGithub(githubUrl: encodeStr)
+            case "sha256":
+                encodeResult = HashUtil().sha256(input: encodeStr)
+            case "sha384":
+                encodeResult = HashUtil().sha384(input: encodeStr)
+            case "sha512":
+                encodeResult = HashUtil().sha512(input: encodeStr)
             default:
                 encodeResult = "error."
             }
