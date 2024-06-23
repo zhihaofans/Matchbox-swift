@@ -28,6 +28,9 @@ struct ContentView: View {
             case "qrcode":
                 QrcodeView(showPageId: $showPageId)
 
+            case "keychain":
+                KeychainView(showPageId: $showPageId)
+
             case "reminder":
                 ReminderView(showPageId: $showPageId).modelContainer(for: ReminderItemModel.self)
 

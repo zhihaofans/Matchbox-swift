@@ -27,6 +27,11 @@ struct MainView: View {
             Text("编码加密").font(.title)
         }
         Button(action: {
+            showPageId = "keychain"
+        }) {
+            Text("KeyChain").font(.title)
+        }
+        Button(action: {
             showPageId = "downloader"
         }) {
             Text("下载器").font(.title)

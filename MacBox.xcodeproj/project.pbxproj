@@ -21,6 +21,7 @@
 		26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20442C21E60100E0A299 /* jsDelivrService.swift */; };
 		26CC20472C226B0000E0A299 /* EncodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20462C226B0000E0A299 /* EncodeView.swift */; };
 		26CC20492C286EA300E0A299 /* QrcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20482C286EA300E0A299 /* QrcodeView.swift */; };
+		26CC204B2C28780F00E0A299 /* KeychainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC204A2C28780F00E0A299 /* KeychainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		26CC20442C21E60100E0A299 /* jsDelivrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsDelivrService.swift; sourceTree = "<group>"; };
 		26CC20462C226B0000E0A299 /* EncodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeView.swift; sourceTree = "<group>"; };
 		26CC20482C286EA300E0A299 /* QrcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeView.swift; sourceTree = "<group>"; };
+		26CC204A2C28780F00E0A299 /* KeychainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				265D49DD2C160B4C00690E9D /* ReminderView.swift */,
 				26CC20462C226B0000E0A299 /* EncodeView.swift */,
 				26CC20482C286EA300E0A299 /* QrcodeView.swift */,
+				26CC204A2C28780F00E0A299 /* KeychainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				265D49DC2C14B94500690E9D /* MainView.swift in Sources */,
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
 				26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */,
+				26CC204B2C28780F00E0A299 /* KeychainView.swift in Sources */,
 				265D49DE2C160B4C00690E9D /* ReminderView.swift in Sources */,
 				265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */,
 				265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */,
