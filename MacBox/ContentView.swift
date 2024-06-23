@@ -10,7 +10,7 @@ import CoreImage.CIFilterBuiltins
 import SwiftUI
 
 struct ContentView: View {
-    private let pageTitleList = ["main": "MacBox", "tool": "工具", "reminder": "提醒事项", "encode": "编码加密"]
+    private let pageTitleList = ["main": "MacBox", "tool": "工具", "reminder": "提醒事项", "encode": "编码加密", "qrcode": "二维码"]
     @State private var showPageId = "main"
     @State private var showPageTitle = "主页"
     var body: some View {
@@ -24,6 +24,9 @@ struct ContentView: View {
 
             case "encode":
                 EncodeView(showPageId: $showPageId)
+
+            case "qrcode":
+                QrcodeView(showPageId: $showPageId)
 
             case "reminder":
                 ReminderView(showPageId: $showPageId).modelContainer(for: ReminderItemModel.self)
@@ -59,7 +62,7 @@ struct ContentView: View {
     }
 
     private func getPageTitle() -> String {
-        return pageTitleList[showPageId] ?? "未知导航"
+        return pageTitleList[showPageId] ?? showPageId.uppercased()
     }
 }
 

@@ -12,6 +12,7 @@ struct ToolsView: View {
     @Binding var showPageId: String
     @State var newPageId = ""
     @State private var showingAlert = false
+    @State private var showingQrcodeAlert = false
     @State private var showingjsDelivrAlert = false
     @State private var githubUrl = "https://github.com/zhihaofans/macbox-swift/blob/main/MacBox/Views/ToolsView.swift"
     @State private var textStr = "Hello, Tools!"
@@ -33,6 +34,16 @@ struct ToolsView: View {
             })
         } message: {
             Text("MacBox会很智能的跳转，除非你乱输入id")
+        }
+        Button(action: {
+            showPageId = "qrcode"
+        }) {
+            Text("二维码").font(.title)
+        }
+        Button(action: {
+            showPageId = "livephotoeditor"
+        }) {
+            Text("实况图片").font(.title)
         }
     }
 }

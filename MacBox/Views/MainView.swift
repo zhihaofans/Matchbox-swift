@@ -11,7 +11,6 @@ struct MainView: View {
     @Binding var showPageId: String
     var body: some View {
         Text("Hello, MacBox!")
-
         Button(action: {
             showPageId = "tool"
         }) {
@@ -26,11 +25,6 @@ struct MainView: View {
             showPageId = "encode"
         }) {
             Text("编码加密").font(.title)
-        }
-        Button(action: {
-            showPageId = "livephotoeditor"
-        }) {
-            Text("实况图片").font(.title)
         }
         Button(action: {
             showPageId = "downloader"
