@@ -36,5 +36,10 @@ struct MainView: View {
         }) {
             Text("下载器").font(.title)
         }
+        Button(action: {
+            showPageId = "feeds"
+        }) {
+            Text("订阅").font(.title)
+        }
     }
 }

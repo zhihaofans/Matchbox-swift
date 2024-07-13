@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263A6E022C41867B00830CD5 /* FeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A6E012C41867B00830CD5 /* FeedsView.swift */; };
+		263A6E042C418E6800830CD5 /* FeedsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A6E032C418E6800830CD5 /* FeedsService.swift */; };
 		265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49B22C063D5600690E9D /* MacBoxApp.swift */; };
 		265D49B52C063D5600690E9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49B42C063D5600690E9D /* ContentView.swift */; };
 		265D49B72C063D5700690E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265D49B62C063D5700690E9D /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		263A6E012C41867B00830CD5 /* FeedsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsView.swift; sourceTree = "<group>"; };
+		263A6E032C418E6800830CD5 /* FeedsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsService.swift; sourceTree = "<group>"; };
 		265D49AF2C063D5600690E9D /* MacBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		265D49B22C063D5600690E9D /* MacBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacBoxApp.swift; sourceTree = "<group>"; };
 		265D49B42C063D5600690E9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				265D49E32C18985A00690E9D /* ReminderService.swift */,
 				26CC20442C21E60100E0A299 /* jsDelivrService.swift */,
+				263A6E032C418E6800830CD5 /* FeedsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 				26CC20462C226B0000E0A299 /* EncodeView.swift */,
 				26CC20482C286EA300E0A299 /* QrcodeView.swift */,
 				26CC204A2C28780F00E0A299 /* KeychainView.swift */,
+				263A6E012C41867B00830CD5 /* FeedsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263A6E042C418E6800830CD5 /* FeedsService.swift in Sources */,
 				265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */,
 				265D49E42C18985A00690E9D /* ReminderService.swift in Sources */,
 				26CC20492C286EA300E0A299 /* QrcodeView.swift in Sources */,
@@ -213,6 +220,7 @@
 				26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */,
 				26CC204B2C28780F00E0A299 /* KeychainView.swift in Sources */,
 				265D49DE2C160B4C00690E9D /* ReminderView.swift in Sources */,
+				263A6E022C41867B00830CD5 /* FeedsView.swift in Sources */,
 				265D49B32C063D5600690E9D /* MacBoxApp.swift in Sources */,
 				265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */,
 				26CC20472C226B0000E0A299 /* EncodeView.swift in Sources */,

@@ -31,6 +31,9 @@ struct ContentView: View {
             case "keychain":
                 KeychainView(showPageId: $showPageId)
 
+            case "feeds":
+                FeedsView()
+
             case "reminder":
                 ReminderView(showPageId: $showPageId).modelContainer(for: ReminderItemModel.self)
 
