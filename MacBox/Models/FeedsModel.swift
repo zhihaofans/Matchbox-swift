@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+
 @Model
 class ReminderIteModel {
     var uuid = UUID()
@@ -21,12 +22,20 @@ class ReminderIteModel {
     }
 }
 
-class FeedsItem{
-    var id:String
-    var title:String
-    var desc:String
-    var url:String
-    var author:String
-    var cover:String
-    // TODO:生成init()
+class FeedsItem {
+    var id: String
+    var title: String
+    var desc: String
+    var url: String
+    var author: String
+    var cover: String
+    // TODO: 生成init()
+    init(id: String, title: String, desc: String, url: String, author: String, cover: String) {
+        self.id = id
+        self.title = title
+        self.desc = desc
+        self.url = url
+        self.author = author
+        self.cover = cover
+    }
 }
