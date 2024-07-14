@@ -6,20 +6,26 @@
 //
 
 import Foundation
-import SwiftData
 
-@Model
-class ReminderIteModel {
-    var uuid = UUID()
-    var title: String
-    var desc: String
-    var timestamp: Int
-    init(title: String, desc: String = "", timestamp: Int) {
-        // self.UUID = UUID
-        self.title = title
-        self.timestamp = timestamp
-        self.desc = desc
-    }
+struct WeiboHotResult: Codable {
+    let cards: [WeiboHotCardItem]?
+}
+
+struct WeiboHotCardItem: Codable {
+    let card_group: [WeiboHotCardGroupItem]?
+    //let show_type: Int
+    //let card_type: Int
+    //let itemid: String
+    let title: String?
+    //let openurl: String
+}
+
+struct WeiboHotCardGroupItem: Codable {
+    let desc: String?
+    let card_type: Int?
+    let itemid: String?
+    let pic: String?
+    let scheme: String?
 }
 
 class FeedsItem {

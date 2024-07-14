@@ -33,7 +33,7 @@ class HttpService {
                 callback(value)
             case let .failure(error):
                 print(error)
-                fail(error.localizedDescription)
+                fail("http.get:" + error.localizedDescription)
             }
         }
     }

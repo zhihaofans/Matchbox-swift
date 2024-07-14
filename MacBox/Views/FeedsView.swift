@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct FeedsView: View {
+    @State var errStr = "Hello, World!"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(errStr)
+        }.onAppear {
+            FeedsService().getWeiboHot { data in
+                print(data)
+            } fail: { err in
+                errStr = err
+            }
+        }
     }
 }
 
