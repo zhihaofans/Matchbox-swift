@@ -8,15 +8,15 @@
 import Foundation
 
 struct WeiboHotResult: Codable {
-    let cards: [WeiboHotCardItem]?
+    let cards: [WeiboHotCardItem]
 }
 
 struct WeiboHotCardItem: Codable {
-    let card_group: [WeiboHotCardGroupItem]?
+    let card_group: [WeiboHotCardGroupItem]
     //let show_type: Int
     //let card_type: Int
-    //let itemid: String
-    let title: String?
+    let itemid: String
+    let title: String
     //let openurl: String
 }
 
