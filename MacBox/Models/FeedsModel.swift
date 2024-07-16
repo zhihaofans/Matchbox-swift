@@ -7,6 +7,24 @@
 
 import Foundation
 
+class FeedsItem {
+    var id: String
+    var title: String
+    var desc: String
+    var url: String
+    var author: String
+    var cover: String
+    // TODO: 生成init()
+    init(id: String, title: String, desc: String, url: String, author: String, cover: String) {
+        self.id = id
+        self.title = title
+        self.desc = desc
+        self.url = url
+        self.author = author
+        self.cover = cover
+    }
+}
+// 微博热榜
 struct WeiboHotResult: Codable {
     let cards: [WeiboHotCardItem]
 }
@@ -28,20 +46,3 @@ struct WeiboHotCardGroupItem: Codable {
     let scheme: String?
 }
 
-class FeedsItem {
-    var id: String
-    var title: String
-    var desc: String
-    var url: String
-    var author: String
-    var cover: String
-    // TODO: 生成init()
-    init(id: String, title: String, desc: String, url: String, author: String, cover: String) {
-        self.id = id
-        self.title = title
-        self.desc = desc
-        self.url = url
-        self.author = author
-        self.cover = cover
-    }
-}
