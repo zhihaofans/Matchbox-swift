@@ -18,11 +18,10 @@ class FeedsService {
                 if result.has(keyword: "{"), result.has(keyword: "}") {
                     debugPrint("weibo.JSONDecoder.start")
                     let data = try JSONDecoder().decode(WeiboHotResult.self, from: result.data(using: .utf8)!)
-                    let hotData=data.cards[0]
-                    let hotList=hotData.card_group
-                    let feedsList=hotList.map { 
-                        let it=$0
-                        FeedsItem(id: it.itemId ?? UUID(), title: it.desc ?? "空白标题", desc: "", url: it.scheme??"", author: hotData.title, cover: it.pic??"")
+                    let hotData = data.cards[0]
+                    let hotList = hotData.card_group
+                    let feedsList = hotList.map {
+                        FeedsItem(id: $0.itemid ?? UUID().uuidString, title: $0.desc ?? "空白标题", desc: "", url: $0.scheme ?? "", author: hotData.title ?? "weibo hot", cover: $0.pic ?? "")
                     }
                     print(feedsList)
                     debugPrint("weibo.JSONDecoder.end")
