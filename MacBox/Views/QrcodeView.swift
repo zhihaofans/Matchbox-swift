@@ -35,6 +35,12 @@ struct QrcodeView: View {
             }
         }.onAppear {
             qrCodeImage = QrcodeUtil().generateQRCode(from: qrcodeStr)
+        }.toolbar {
+            Button("Share", systemImage: "square.and.arrow.up", action: {
+                if qrCodeImage != nil {
+                    ShareUtil().shareImage(img: qrCodeImage!)
+                }
+            })
         }
     }
 }
