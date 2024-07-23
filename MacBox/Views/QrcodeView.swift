@@ -15,9 +15,12 @@ struct QrcodeView: View {
     var body: some View {
         TextField("", text: $qrcodeStr).onChange(of: qrcodeStr) { _, _ in
             if qrcodeStr.isEmpty {
-                qrcodeStr = "Hello, Tools!"
+                qrCodeImage = QrcodeUtil().generateQRCode(from: "Hello, Tools!")
+            }else{
+                qrCodeImage = QrcodeUtil().generateQRCode(from: qrcodeStr)
             }
-            qrCodeImage = QrcodeUtil().generateQRCode(from: qrcodeStr)
+            
+            
         }
         if qrCodeImage != nil {
             Image(nsImage: qrCodeImage!)
@@ -25,22 +28,13 @@ struct QrcodeView: View {
                 .interpolation(.none)
                 .scaledToFit()
                 .frame(width: 200, height: 200)
+                .contentShape(Rectangle()) // 加这行才实现可点击
+                .onTapGesture {
+                    // TODO: onClick
+                    
+                }
         } else {
             Text("生成中...")
         }
-    }
-
-    func generateQRCode(from string: String) -> NSImage? {
-        let context = CIContext()
-        let filter = CIFilter.qrCodeGenerator()
-        filter.message = Data(string.utf8)
-        if let outputImage = filter.outputImage {
-            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
-                let size = NSSize(width: outputImage.extent.width, height: outputImage.extent.height)
-                let nsImage = NSImage(cgImage: cgimg, size: size)
-                return nsImage
-            }
-        }
-        return nil
     }
 }
