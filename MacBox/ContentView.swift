@@ -20,22 +20,16 @@ struct ContentView: View {
                 MainView(showPageId: $showPageId)
 
             case "tool":
-                ToolsView(showPageId: $showPageId)
-
-            case "encode":
-                EncodeView(showPageId: $showPageId)
-
-            case "qrcode":
-                QrcodeView(showPageId: $showPageId)
+                ToolsView()
 
             case "keychain":
-                KeychainView(showPageId: $showPageId)
+                KeychainView()
 
             case "feeds":
                 FeedsView()
 
             case "reminder":
-                ReminderView(showPageId: $showPageId).modelContainer(for: ReminderItemModel.self)
+                ReminderView().modelContainer(for: ReminderItemModel.self)
 
             // case "livephotoeditor":
                 // print("livephotoeditor")
