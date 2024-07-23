@@ -22,11 +22,6 @@ struct MainView: View {
             Text("提醒事项").font(.title)
         }
         Button(action: {
-            showPageId = "encode"
-        }) {
-            Text("编码加密").font(.title)
-        }
-        Button(action: {
             showPageId = "keychain"
         }) {
             Text("KeyChain").font(.title)

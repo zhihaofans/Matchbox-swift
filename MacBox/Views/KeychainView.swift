@@ -9,7 +9,6 @@ import Security
 import SwiftUI
 
 struct KeychainView: View {
-    @Binding var showPageId: String
     @State private var inputKey = ""
     @State private var inputValue = ""
     @State private var alertShow = false

@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftUtils
 
 struct EncodeView: View {
-    @Binding var showPageId: String
     @State private var encodeMode = "urlencode"
     @State private var encodeStr = ""
     @State private var selectedFlavor = ""
@@ -18,22 +17,31 @@ struct EncodeView: View {
     @State private var alertTitle = "错误"
     @State private var alertText = "未知错误"
     var body: some View {
-        Picker("模式", selection: $encodeMode) {
-            Text("Url编码").tag("urlencode")
-            Text("Url解码").tag("urldecode")
-            Text("Base64编码").tag("base64encode")
-            Text("Base64解码").tag("base64decode")
-            Text("Sha256加密").tag("sha256")
-            Text("Sha384加密").tag("sha384")
-            Text("Sha512加密").tag("sha512")
-            Text("Github转jsDelivr").tag("github2jsdelivr")
+        VStack {
+            Picker("模式", selection: $encodeMode) {
+                Text("Url编码").tag("urlencode")
+                Text("Url解码").tag("urldecode")
+                Text("Base64编码").tag("base64encode")
+                Text("Base64解码").tag("base64decode")
+                Text("Sha256加密").tag("sha256")
+                Text("Sha384加密").tag("sha384")
+                Text("Sha512加密").tag("sha512")
+                Text("Github转jsDelivr").tag("github2jsdelivr")
+            }
+            TextField("请输入:", text: $encodeStr)
+            TextField("结果:", text: $encodeResult)
+            Button(action: {
+                self.auto()
+            }) {
+                Text("Go").font(.title)
+            }
         }
-        TextField("请输入:", text: $encodeStr)
-        TextField("结果:", text: $encodeResult)
-        Button(action: {
-            self.auto()
-        }) {
-            Text("Go").font(.title)
+        .alert("结果", isPresented: $showingAlert) {
+            Button("OK", action: {
+                alertText = ""
+            })
+        } message: {
+            Text(alertText)
         }
     }
 
@@ -60,7 +68,8 @@ struct EncodeView: View {
                 encodeResult = "error."
             }
         } else {
-            encodeResult = "isEmpty."
+            alertText = "请输入内容"
+            showingAlert = true
         }
     }
 }

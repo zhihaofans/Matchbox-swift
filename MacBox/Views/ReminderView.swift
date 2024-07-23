@@ -10,7 +10,6 @@ import SwiftUI
 import SwiftUtils
 
 struct ReminderView: View {
-    @Binding var showPageId: String
     @Environment(\.modelContext) private var modelContext
     @State private var path = [ReminderItemModel]()
     // 默认排序方式
