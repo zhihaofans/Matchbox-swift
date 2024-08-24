@@ -13,10 +13,14 @@ struct ToolsView: View {
         NavigationView {
             List {
                 NavigationLink("工具", destination: ToolsOldView())
+                NavigationLink(destination: Text("Detail View")) {
+                    Text("工具")
+                        .font(.largeTitle)  // 设置字体大小
+                }
                 NavigationLink("二维码", destination: QrcodeView())
                 NavigationLink("编码", destination: EncodeView())
             }
-            .listStyle(DefaultListStyle())
+            .listStyle(SidebarListStyle())
             .navigationTitle("工具")
             /* .toolbar {
                  ToolbarItem(placement: .automatic) {

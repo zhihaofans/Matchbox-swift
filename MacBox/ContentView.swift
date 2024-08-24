@@ -35,7 +35,6 @@ struct ContentView: View {
                 // print("livephotoeditor")
 
             default:
-
                 Text("错误导航")
                     .font(.largeTitle)
                     .padding()
@@ -49,6 +48,9 @@ struct ContentView: View {
             // 增加数据
             Button("Home", systemImage: "house", action: {
                 showPageId = "main"
+            })
+            Button("Setting", systemImage: "gear", action: {
+                showPageId = "setting"
             })
         }
         .onChange(of: showPageId) {
