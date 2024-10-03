@@ -5,6 +5,7 @@
 //  Created by zzh on 2024/6/8.
 //
 
+import NaturalLanguage
 import SwiftUI
 import SwiftUtils
 
@@ -15,10 +16,11 @@ struct ToolsView: View {
                 NavigationLink("工具", destination: ToolsOldView())
                 NavigationLink(destination: Text("Detail View")) {
                     Text("工具")
-                        .font(.largeTitle)  // 设置字体大小
+                        .font(.largeTitle) // 设置字体大小
                 }
                 NavigationLink("二维码", destination: QrcodeView())
                 NavigationLink("编码", destination: EncodeView())
+                NavigationLink("文本分词", destination: FenciView())
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("工具")
@@ -48,6 +50,22 @@ struct ToolsOldView: View {
             // TODO:
         }) {
             Text("实况图片").font(.title)
+        }
+    }
+}
+
+struct FenciView: View {
+    @State private var input = ""
+    @State private var fenciList: [String] = []
+    @State private var fenciUnit: NLTokenUnit = .document
+    var body: some View {
+        VStack {
+            TextField("", text: $input).onChange(of: input) { _, _ in
+                fenciList = FenciUtil(fenciUnit).fenci(input)
+            }
+            List(fenciList, id: \.self) {
+                Text($0)
+            }
         }
     }
 }
