@@ -15,32 +15,34 @@ struct ReminderView: View {
     // 默认排序方式
     @State private var sortOrder = SortDescriptor(\ReminderItemModel.timestamp, order: .reverse)
 
-    var body: some View { NavigationStack(path: $path) {
-        TodoListView(sort: sortOrder)
-            .navigationDestination(for: ReminderItemModel.self) { reminderItem in
-                EditView(reminderItem: reminderItem)
-            }
-            .navigationTitle("ReminderList")
-            .toolbar {
-                // 增加数据
-                /* Button("Home", systemImage: "house", action: {
-                     showPageId = "main"
-                 }) */
-                Button("Add", systemImage: "plus", action: addItem)
-
-                // 修改排序方式
-                Menu("Sort", systemImage: "arrow.up.arrow.down") {
-                    Picker("Sort", selection: $sortOrder) {
-                        Text("标题")
-                            .tag(SortDescriptor(\ReminderItemModel.title, order: .reverse))
-
-                        Text("日期")
-                            .tag(SortDescriptor(\ReminderItemModel.timestamp, order: .reverse))
-                    }
-                    .pickerStyle(.inline)
+    var body: some View {
+        NavigationStack(path: $path) {
+            TodoListView(sort: sortOrder)
+                .navigationDestination(for: ReminderItemModel.self) { reminderItem in
+                    EditView(reminderItem: reminderItem)
                 }
-            }
-    }}
+                .navigationTitle("ReminderList")
+                .toolbar {
+                    // 增加数据
+                    /* Button("Home", systemImage: "house", action: {
+                         showPageId = "main"
+                     }) */
+                    Button("Add", systemImage: "plus", action: addItem)
+
+                    // 修改排序方式
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("标题")
+                                .tag(SortDescriptor(\ReminderItemModel.title, order: .reverse))
+
+                            Text("日期")
+                                .tag(SortDescriptor(\ReminderItemModel.timestamp, order: .reverse))
+                        }
+                        .pickerStyle(.inline)
+                    }
+                }
+        }
+    }
 
     func addItem() {
         let reminderItem = ReminderItemModel(title: "test", desc: "", timestamp: DateUtil().getTimestamp())
@@ -72,7 +74,7 @@ struct TodoListView: View {
 
                             Spacer()
 
-                            Text(DateUtil().timestampToTimeStr(timestampInt: reminderItem.timestamp))
+                            Text(DateUtil().timestampToTimeStr(reminderItem.timestamp))
                         }
                     }
                 }
@@ -102,7 +104,7 @@ struct EditView: View {
 
             Text("请输入标题!").font(.largeTitle)
             TextField("标题:", text: $reminderItem.title)
-            Text("创建时间:" + DateUtil().timestampToTimeStr(timestampInt: reminderItem.timestamp)).font(.largeTitle)
+            Text("创建时间:" + DateUtil().timestampToTimeStr(reminderItem.timestamp)).font(.largeTitle)
             Button(action: {}) {
                 Text("").font(.title)
             }

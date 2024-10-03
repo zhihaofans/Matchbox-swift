@@ -15,7 +15,7 @@ class FeedsService {
         self.httpService.get(url: url) { result in
             print(result)
             do {
-                if result.has(keyword: "{"), result.has(keyword: "}") {
+                if result.has("{"), result.has("}") {
                     debugPrint("weibo.JSONDecoder.start")
                     let data = try JSONDecoder().decode(WeiboHotResult.self, from: result.data(using: .utf8)!)
                     let hotData = data.cards[0]

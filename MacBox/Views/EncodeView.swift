@@ -49,21 +49,21 @@ struct EncodeView: View {
         if encodeStr.isNotEmpty {
             switch encodeMode.lowercased() {
             case "urlencode":
-                encodeResult = EncodeUtil().urlEncode(oldString: encodeStr)
+                encodeResult = EncodeUtil().urlEncode(encodeStr)
             case "urldecode":
-                encodeResult = EncodeUtil().urlDecode(oldString: encodeStr)
+                encodeResult = EncodeUtil().urlDecode(encodeStr)
             case "base64encode":
-                encodeResult = EncodeUtil().base64Encode(oldString: encodeStr)
+                encodeResult = EncodeUtil().base64Encode(encodeStr)
             case "base64decode":
-                encodeResult = EncodeUtil().base64Decode(oldString: encodeStr)
+                encodeResult = EncodeUtil().base64Decode(encodeStr)
             case "github2jsdelivr":
                 encodeResult = jsDelivrSerivce().generateFromGithub(githubUrl: encodeStr)
             case "sha256":
-                encodeResult = HashUtil().sha256(input: encodeStr)
+                encodeResult = HashUtil().sha256(encodeStr)
             case "sha384":
-                encodeResult = HashUtil().sha384(input: encodeStr)
+                encodeResult = HashUtil().sha384(encodeStr)
             case "sha512":
-                encodeResult = HashUtil().sha512(input: encodeStr)
+                encodeResult = HashUtil().sha512(encodeStr)
             default:
                 encodeResult = "error."
             }
