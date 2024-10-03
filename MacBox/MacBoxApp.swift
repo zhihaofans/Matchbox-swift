@@ -13,5 +13,9 @@ struct MacBoxApp: App {
         WindowGroup {
             ContentView()
         }
+        WindowGroup("Settings") {
+            SettingView()
+        }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "openSettings"))
     }
 }

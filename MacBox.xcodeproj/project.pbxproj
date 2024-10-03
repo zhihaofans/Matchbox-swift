@@ -15,12 +15,13 @@
 		265D49B52C063D5600690E9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49B42C063D5600690E9D /* ContentView.swift */; };
 		265D49B72C063D5700690E9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265D49B62C063D5700690E9D /* Assets.xcassets */; };
 		265D49BA2C063D5700690E9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 265D49B92C063D5700690E9D /* Preview Assets.xcassets */; };
-		265D49CC2C0784EE00690E9D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 265D49CB2C0784EE00690E9D /* Alamofire */; };
 		265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49D92C14AF8700690E9D /* ToolsView.swift */; };
 		265D49DC2C14B94500690E9D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49DB2C14B94500690E9D /* MainView.swift */; };
 		265D49DE2C160B4C00690E9D /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49DD2C160B4C00690E9D /* ReminderView.swift */; };
 		265D49E02C160D7100690E9D /* ReminderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49DF2C160D7100690E9D /* ReminderDataModel.swift */; };
 		265D49E42C18985A00690E9D /* ReminderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265D49E32C18985A00690E9D /* ReminderService.swift */; };
+		26C735D22CADA0C500B1EC82 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C735D12CADA0C400B1EC82 /* SettingView.swift */; };
+		26C735D52CADA6BD00B1EC82 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C735D42CADA6BD00B1EC82 /* ListItemView.swift */; };
 		26CC20432C21D2C000E0A299 /* SwiftUtils in Frameworks */ = {isa = PBXBuildFile; productRef = 26CC20422C21D2C000E0A299 /* SwiftUtils */; };
 		26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20442C21E60100E0A299 /* jsDelivrService.swift */; };
 		26CC20472C226B0000E0A299 /* EncodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CC20462C226B0000E0A299 /* EncodeView.swift */; };
@@ -45,6 +46,8 @@
 		265D49DD2C160B4C00690E9D /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
 		265D49DF2C160D7100690E9D /* ReminderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDataModel.swift; sourceTree = "<group>"; };
 		265D49E32C18985A00690E9D /* ReminderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderService.swift; sourceTree = "<group>"; };
+		26C735D12CADA0C400B1EC82 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		26C735D42CADA6BD00B1EC82 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		26CC20442C21E60100E0A299 /* jsDelivrService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsDelivrService.swift; sourceTree = "<group>"; };
 		26CC20462C226B0000E0A299 /* EncodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeView.swift; sourceTree = "<group>"; };
 		26CC20482C286EA300E0A299 /* QrcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrcodeView.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26CC20432C21D2C000E0A299 /* SwiftUtils in Frameworks */,
-				265D49CC2C0784EE00690E9D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +129,7 @@
 		265D49D82C14AEF400690E9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26C735D32CADA6B300B1EC82 /* Componets */,
 				265D49D92C14AF8700690E9D /* ToolsView.swift */,
 				265D49DB2C14B94500690E9D /* MainView.swift */,
 				265D49DD2C160B4C00690E9D /* ReminderView.swift */,
@@ -134,8 +137,17 @@
 				26CC20482C286EA300E0A299 /* QrcodeView.swift */,
 				26CC204A2C28780F00E0A299 /* KeychainView.swift */,
 				263A6E012C41867B00830CD5 /* FeedsView.swift */,
+				26C735D12CADA0C400B1EC82 /* SettingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		26C735D32CADA6B300B1EC82 /* Componets */ = {
+			isa = PBXGroup;
+			children = (
+				26C735D42CADA6BD00B1EC82 /* ListItemView.swift */,
+			);
+			path = Componets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +167,6 @@
 			);
 			name = MacBox;
 			packageProductDependencies = (
-				265D49CB2C0784EE00690E9D /* Alamofire */,
 				26CC20422C21D2C000E0A299 /* SwiftUtils */,
 			);
 			productName = MacBox;
@@ -188,7 +199,6 @@
 			);
 			mainGroup = 265D49A62C063D5600690E9D;
 			packageReferences = (
-				265D49CA2C0784ED00690E9D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				26CC20412C21D2C000E0A299 /* XCRemoteSwiftPackageReference "SwiftUtils" */,
 			);
 			productRefGroup = 265D49B02C063D5600690E9D /* Products */;
@@ -218,10 +228,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				263A6E042C418E6800830CD5 /* FeedsService.swift in Sources */,
+				26C735D52CADA6BD00B1EC82 /* ListItemView.swift in Sources */,
 				265D49DA2C14AF8700690E9D /* ToolsView.swift in Sources */,
 				265D49E42C18985A00690E9D /* ReminderService.swift in Sources */,
 				26CC20492C286EA300E0A299 /* QrcodeView.swift in Sources */,
 				265D49DC2C14B94500690E9D /* MainView.swift in Sources */,
+				26C735D22CADA0C500B1EC82 /* SettingView.swift in Sources */,
 				265D49B52C063D5600690E9D /* ContentView.swift in Sources */,
 				26CC20452C21E60100E0A299 /* jsDelivrService.swift in Sources */,
 				263A6E062C42E0B600830CD5 /* FeedsModel.swift in Sources */,
@@ -434,14 +446,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		265D49CA2C0784ED00690E9D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = exactVersion;
-				version = 5.9.1;
-			};
-		};
 		26CC20412C21D2C000E0A299 /* XCRemoteSwiftPackageReference "SwiftUtils" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zhihaofans/SwiftUtils";
@@ -453,11 +457,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		265D49CB2C0784EE00690E9D /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 265D49CA2C0784ED00690E9D /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		26CC20422C21D2C000E0A299 /* SwiftUtils */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 26CC20412C21D2C000E0A299 /* XCRemoteSwiftPackageReference "SwiftUtils" */;
