@@ -41,7 +41,13 @@ struct FeedsView: View {
 }
 
 struct FeedsItemView: View {
-    var itemData: FeedsItem
+    private var itemData: FeedsItem
+    @State private var qrCodeImage: NSImage?=nil
+    init(itemData: FeedsItem) {
+        self.itemData=itemData
+        self.qrCodeImage=nil
+    }
+
     var body: some View {
         VStack {
             HSplitView {
@@ -58,6 +64,17 @@ struct FeedsItemView: View {
                     Text(itemData.author)
                 }
                 // .frame(width: geometry.size.width)
+                if qrCodeImage != nil {
+                    Image(nsImage: qrCodeImage!)
+                        .resizable()
+                        .interpolation(.none)
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                        .contentShape(Rectangle()) // 加这行才实现可点击
+                        .onTapGesture {
+                            // TODO: onClick
+                        }
+                }
             }
         }
         .frame(height: 100) // 将 VStack 的固定高度设置为100

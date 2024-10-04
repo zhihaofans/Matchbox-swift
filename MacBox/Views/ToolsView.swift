@@ -60,7 +60,7 @@ struct FenciView: View {
     @State private var fenciUnit: NLTokenUnit = .document
     var body: some View {
         VStack {
-            TextField("", text: $input).onChange(of: input) { _, _ in
+            TextField("输入要分词的文本", text: $input).onChange(of: input) { _, _ in
                 fenciList = FenciUtil(fenciUnit).fenci(input)
             }
             List(fenciList, id: \.self) {
