@@ -21,6 +21,7 @@ struct ToolsView: View {
                 NavigationLink("二维码", destination: QrcodeView())
                 NavigationLink("编码", destination: EncodeView())
                 NavigationLink("文本分词", destination: FenciView())
+                NavigationLink("系统信息", destination: SysInfoView())
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("工具")
@@ -57,7 +58,7 @@ struct ToolsOldView: View {
 struct FenciView: View {
     @State private var input = ""
     @State private var fenciList: [String] = []
-    @State private var fenciUnit: NLTokenUnit = .document
+    @State private var fenciUnit: NLTokenUnit = .word
     var body: some View {
         VStack {
             TextField("输入要分词的文本", text: $input).onChange(of: input) { _, _ in
@@ -65,6 +66,17 @@ struct FenciView: View {
             }
             List(fenciList, id: \.self) {
                 Text($0)
+            }
+        }
+    }
+}
+
+struct SysInfoView: View {
+    private let deviceUtil = DeviceUtil()
+    var body: some View {
+        VStack {
+            List {
+                SimpleTextItemView(title: "MacOS", detail: deviceUtil.isMac().string(trueStr: "✅", falseStr: "❌"))
             }
         }
     }
