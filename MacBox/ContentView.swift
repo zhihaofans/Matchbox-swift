@@ -9,26 +9,26 @@ import Alamofire
 import CoreImage.CIFilterBuiltins
 import SwiftUI
 
-class CustomWindowController: NSWindowController {
-    convenience init(rootView: NSView) {
-        let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 400, height: 300), // 定义窗口大小
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered,
-            defer: false
-        )
-        window.center() // 窗口居中
-        self.init(window: window)
-        window.contentView = rootView
-        window.makeKeyAndOrderFront(nil)
-    }
-}
+//class CustomWindowController: NSWindowController {
+//    convenience init(rootView: NSView) {
+//        let window = NSWindow(
+//            contentRect: NSRect(x: 0, y: 0, width: 400, height: 300), // 定义窗口大小
+//            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+//            backing: .buffered,
+//            defer: false
+//        )
+//        window.center() // 窗口居中
+//        self.init(window: window)
+//        window.contentView = rootView
+//        window.makeKeyAndOrderFront(nil)
+//    }
+//}
 
 struct ContentView: View {
     private let pageTitleList = ["main": "MacBox", "tool": "工具", "reminder": "提醒事项", "encode": "编码加密", "qrcode": "二维码", "setting": "设置"]
     @State private var showPageId = "main"
     @State private var showPageTitle = "主页"
-    private let rootView = NSHostingController(rootView: SettingView())
+//    private let rootView = NSHostingController(rootView: SettingView())
     var body: some View {
         VStack {
             switch showPageId.lowercased() {
@@ -61,7 +61,6 @@ struct ContentView: View {
                 }
             }
         }.toolbar {
-            // 增加数据
             Button("Home", systemImage: "house", action: {
                 showPageId = "main"
             })
@@ -75,7 +74,6 @@ struct ContentView: View {
             })
         }
         .onChange(of: showPageId) {
-            // 当 a 改变时，更新 b
             showPageTitle = getPageTitle()
         }
         .onAppear {
