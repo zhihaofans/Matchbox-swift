@@ -79,8 +79,75 @@ struct SysInfoView: View {
                 SimpleTextItemView(title: "MacOS", detail: deviceUtil.isMac().string(trueStr: "✅", falseStr: "❌"))
                 SimpleTextItemView(title: "WatchOS", detail: deviceUtil.isWatch().string(trueStr: "✅", falseStr: "❌"))
                 SimpleTextItemView(title: "OS ver", detail: deviceUtil.getSystemVersion())
-//                SimpleTextItemView(title: "电量", detail: deviceUtil.getBatteryLevel().toString + "%")
+//                SimpleTextItemView(title: "电量", detail: self.getBatteryLevel().toString + "%")
             }
+        }
+    }
+
+    private func getBatteryLevel() -> Int {
+        let process = Process()
+        let pipe = Pipe()
+
+        // 设置要运行的命令，这里是 system_profiler，路径为 /usr/sbin/system_profiler
+        process.executableURL = URL(fileURLWithPath: "/usr/sbin/system_profiler")
+        // 设置命令的参数，只获取电源相关的数据
+        process.arguments = ["SPPowerDataType"]
+        // 设置输出管道，将命令的输出重定向到这个管道
+        process.standardOutput = pipe
+        do {
+            // 启动进程
+            try process.run()
+            // 等待进程完成
+            process.waitUntilExit()
+
+            // 从管道读取数据，转换为字符串
+            let data = pipe.fileHandleForReading.readDataToEndOfFile()
+            if let output = String(data: data, encoding: .utf8) {
+                // print(output)
+                // 解析电池信息
+                let lines = output.split(separator: "\n")
+                print(lines)
+                var batteryFull = 0
+                var batteryNow = 0
+                var batteryLevel = 0
+                for line in lines {
+                    // 查找并打印剩余电量
+                    if line.contains("Charge Remaining (mAh):") {
+                        batteryNow = Int(line.trimmingCharacters(in: .whitespaces)) ?? -1
+                        print(batteryNow)
+                    }
+                    // 查找并打印是否充满电
+                    if line.contains("Fully Charged:") {
+                        print(line.trimmingCharacters(in: .whitespaces))
+                    }
+                    // 查找并打印是否正在充电
+                    if line.contains("Charging:") {
+                        print(line.trimmingCharacters(in: .whitespaces))
+                    }
+                    // 查找并打印满充电量
+                    if line.contains("Full Charge Capacity (mAh):") {
+                        batteryFull = Int(line.trimmingCharacters(in: .whitespaces)) ?? -1
+                        print(batteryFull)
+                    }
+                    // 查找并打印满充电量
+                    if line.contains("State of Charge (%):") {
+                        batteryLevel = Int(line.trimmingCharacters(in: .whitespaces)) ?? -1
+                        print(batteryLevel)
+                    }
+                }
+//                if batteryNow <= 0 || batteryFull <= 0 {
+//                    return -1
+//                } else {
+//                    return Int((batteryNow / batteryFull) * 100)
+//                }
+                return batteryLevel
+            } else {
+                return -1
+            }
+        } catch {
+            // 如果命令执行失败，打印错误信息
+            print("Failed to fetch battery info: \(error)")
+            return -1
         }
     }
 }
