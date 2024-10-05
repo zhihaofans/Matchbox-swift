@@ -77,6 +77,9 @@ struct SysInfoView: View {
         VStack {
             List {
                 SimpleTextItemView(title: "MacOS", detail: deviceUtil.isMac().string(trueStr: "✅", falseStr: "❌"))
+                SimpleTextItemView(title: "WatchOS", detail: deviceUtil.isWatch().string(trueStr: "✅", falseStr: "❌"))
+                SimpleTextItemView(title: "OS ver", detail: deviceUtil.getSystemVersion())
+//                SimpleTextItemView(title: "电量", detail: deviceUtil.getBatteryLevel().toString + "%")
             }
         }
     }
